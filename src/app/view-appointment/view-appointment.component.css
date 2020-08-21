@@ -1,0 +1,44 @@
+.h1, .h2, .h3, .h4, .h5, .h6 ,.h7{
+    font-size: 14px;
+}
+
+mat-icon{
+    cursor: pointer;
+}
+
+tr:hover{
+    background-color: #D3D3D3;
+}
+.title{
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+}
+
+th{
+    color: #3f51b5;
+}
+
+.modal {
+
+    width: 100px;
+    height: 100px;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    
+}
+
+.input{
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+mat-card{
+   margin: 10px;
+}

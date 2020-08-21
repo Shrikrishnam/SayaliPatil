@@ -1,0 +1,23 @@
+mat-form-field{
+    margin: 15px;
+    width: 45%;
+}
+
+
+div{
+    width: 100%;
+}
+ 
+.close{
+   align-items: flex-end ;
+}
+mat-radio-button{
+    width: 100%;
+}
+
+small{
+    color: #808080;
+}
+fieldset{
+    border: black;
+}

@@ -1,0 +1,62 @@
+mat-form-field{
+    margin: 15px;
+}
+
+div{
+    width: 100%;
+}
+.close{
+   align-items: flex-end ;
+}
+mat-radio-button{
+    width: 100%;
+}
+
+small{
+    color: #808080;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    opacity: 95%;
+}
+
+.top{
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.5vw;
+}
+
+.middle{
+    position: absolute;
+    top: 180px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 4vw;
+    font-weight:bolder;
+}
+
+small{
+    position: absolute;
+    top: 285px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1vw;
+}
+
+button{
+    position: absolute;
+    top: 350px;
+    left: 45%;
+    background-color: white;
+    font-size: 16px;
+    color: #3f51b5;
+}

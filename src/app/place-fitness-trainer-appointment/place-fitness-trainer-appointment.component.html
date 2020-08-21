@@ -1,0 +1,278 @@
+<button class = "close" mat-icon-button (click)="dialogRef.close()" ><mat-icon>close</mat-icon></button>
+<div style="text-align: center; color: #3f51b5; font-size: 36px; padding-bottom: 25px;">
+    Appointment
+</div>
+<mat-card>
+<!-- <mat-horizontal-stepper [linear]=true #stepper>
+    <mat-step [stepControl]="fitnessForm" > -->
+      <form [formGroup]="fitnessForm" (keydown.enter)="$event.preventDefault()">
+        <ng-template matStepLabel>Fill out your details</ng-template>
+        <div>
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input type="text" matInput placeholder="First name" formControlName="firstname" required >  
+                <small class="form-text text-muted"
+                *ngIf="fitnessForm.controls.firstname.touched && fitnessForm.controls.firstname.errors?.required  
+                && fitnessForm.controls.firstname.errors?.invalid
+                " >
+                Please enter valid first name.!
+                </small>
+               
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input type="text" matInput placeholder="Last name" formControlName="lastname" required >
+                <small class="form-text text-muted"
+                *ngIf="fitnessForm.controls.lastname.touched && fitnessForm.controls.lastname.errors?.required " >
+                Please enter valid last name.!
+                </small>
+            </mat-form-field> 
+        </div>
+        <div >
+            <mat-form-field>
+                <mat-label>Age</mat-label>
+                <input type="number" matInput placeholder="Age" formControlName="age" required >
+                <small class="form-text text-muted"
+                *ngIf="fitnessForm.controls.age.touched && fitnessForm.controls.age.errors?.required">
+                    Please Enter your age!  Age Limit 18-65 !!
+            </small>
+            
+            
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Email ID</mat-label>
+                <input type="email" matInput placeholder="Email" formControlName="email" required >
+                <small class="form-text text-muted"
+                *ngIf="fitnessForm.controls.email.touched && fitnessForm.controls.email.errors?.required">
+                    Please Enter valid email ID!
+            </small>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Phone</mat-label>
+                <input type="number" matInput placeholder="Phone Number" formControlName="phonenumber" required >
+                <small class="form-text text-muted"
+                *ngIf="fitnessForm.controls.phonenumber.touched && fitnessForm.controls.phonenumber.errors?.required">
+                    Please Enter a valid Phone Number!
+            </small>
+            </mat-form-field> 
+        </div>
+        <!-- <div>
+          <button mat-button matStepperNext>Next</button>
+        </div> -->
+        <fieldset>
+            <legend>Address</legend>
+                   <div>
+          <mat-form-field>
+                <mat-label>Street Address</mat-label>
+                <input matInput formControlName="streetaddress" placeholder="Ex. 1 Main St, New York, NY"
+                     required>
+                <small class="form-text text-muted"
+                     *ngIf="fitnessForm.controls.streetaddress.touched && fitnessForm.controls.streetaddress.errors?.required">
+                         Please Enter valid address!
+                 </small>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>City</mat-label>
+              <input matInput formControlName="city" placeholder="City"
+                     required>
+                <small class="form-text text-muted"
+                     *ngIf="fitnessForm.controls.city.touched && fitnessForm.controls.city.errors?.required">
+                         Please enter valid city name!
+                 </small>
+          </mat-form-field>
+      </div>
+
+      <div>
+          <mat-form-field>
+              <mat-label>State</mat-label>
+              <input matInput formControlName="state" placeholder="State"
+                     required>
+                <small class="form-text text-muted"
+                     *ngIf="fitnessForm.controls.state.touched && fitnessForm.controls.state.errors?.required">
+                         Please Enter a valid state name!
+                 </small>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>Country</mat-label>
+              <input matInput formControlName="country" placeholder="Country"
+                     required>
+                <small class="form-text text-muted"
+                     *ngIf="fitnessForm.controls.country.touched && fitnessForm.controls.country.errors?.required">
+                         Please Enter a valid country name!
+                 </small>
+          </mat-form-field>
+      </div>
+      <div>
+      <mat-form-field>
+       
+          <mat-label>Pincode</mat-label>
+          <input matInput formControlName="pincode" placeholder="6-digit code"
+                 required>
+            <small class="form-text text-muted"
+                 *ngIf="fitnessForm.controls.pincode.touched && fitnessForm.controls.pincode.errors?.required ">
+                     Please Enter a 6 digit pincode!
+             </small>
+      </mat-form-field>
+        </div>
+          
+       
+    </fieldset>
+ 
+      <div style="padding-left: 15px">
+            <mat-label> <small>Trainer Preference</small></mat-label>
+                <mat-radio-group formControlName="trainerpreference" aria-label="Select an option">
+                    <mat-radio-button value="Male">Male Trainer</mat-radio-button>
+                    <mat-radio-button value="Female">Female Trainer</mat-radio-button>
+                    <mat-radio-button value="No Preference">No Preference</mat-radio-button>
+            </mat-radio-group>           
+        </div>
+
+        <div style="padding-left: 15px">
+            <mat-label> <small>Physiotherapist</small></mat-label>
+                <mat-radio-group formControlName="physiotherapist" aria-label="Select an option">
+                    <mat-radio-button  value="No">No</mat-radio-button>
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+            </mat-radio-group>    
+        </div>          
+        <div style="padding-left: 15px">
+            <mat-label> <small>Package (10% GST)</small></mat-label>
+                <mat-radio-group formControlName="packages" aria-label="Select an option">
+                    <mat-radio-button value="500">Monthly Package - Rs.500/-</mat-radio-button>
+                    <mat-radio-button value="1200">Quarterly Package - Rs.1200/-</mat-radio-button>
+                    <mat-radio-button value="2200">Half Yearly Package - Rs.2200/-</mat-radio-button>
+                    <mat-radio-button value="4000">Half Yearly Package - Rs.4000/-</mat-radio-button>
+            </mat-radio-group>  
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>INR</mat-label>
+                <input matInput formControlName="inr"   
+                       readonly>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Paisa</mat-label>
+                <input matInput formControlName="paisa" 
+                readonly>
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-button (click)="fitnessForm.reset()">Reset</button>
+            <button mat-button (click)=onSubmit() >{{ buttonName }}</button>
+      </div>
+
+      </form>
+    </mat-card>
+
+
+    <!-- </mat-step> -->
+    <!-- <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        
+        <div>
+            <mat-form-field>
+                <mat-label>Street Address</mat-label>
+                <input matInput formControlName="streetaddress" placeholder="Ex. 1 Main St, New York, NY"
+                       required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>City</mat-label>
+                <input matInput formControlName="city" placeholder="City"
+                       required>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>State</mat-label>
+                <input matInput formControlName="state" placeholder="State"
+                       required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Country</mat-label>
+                <input matInput formControlName="country" placeholder="Country"
+                       required>
+            </mat-form-field>
+        </div>
+        <mat-form-field>
+            <mat-label>Pincode</mat-label>
+            <input matInput formControlName="pincode" placeholder="6-digit code"
+                   required>
+        </mat-form-field>
+
+        
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Fill out your Package Details</ng-template>
+          <div style="padding-left: 15px">
+            <mat-label> <small>Trainer Preference</small></mat-label>
+                <mat-radio-group formControlName="trainerpreference" aria-label="Select an option">
+                    <mat-radio-button value="Male">Male Trainer</mat-radio-button>
+                    <mat-radio-button value="Female">Female Trainer</mat-radio-button>
+                    <mat-radio-button value="No Preference">No Preference</mat-radio-button>
+            </mat-radio-group>           
+        </div>
+
+        <div style="padding-left: 15px">
+            <mat-label> <small>Physiotherapist</small></mat-label>
+                <mat-radio-group formControlName="physiotherapist" aria-label="Select an option">
+                    <mat-radio-button  value="No">No</mat-radio-button>
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+            </mat-radio-group>    
+        </div>          
+        <div style="padding-left: 15px">
+            <mat-label> <small>Package (10% GST)</small></mat-label>
+                <mat-radio-group formControlName="packages" aria-label="Select an option">
+                    <mat-radio-button value="500">Monthly Package - Rs.500/-</mat-radio-button>
+                    <mat-radio-button value="1200">Quarterly Package - Rs.1200/-</mat-radio-button>
+                    <mat-radio-button value="2200">Half Yearly Package - Rs.2200/-</mat-radio-button>
+                    <mat-radio-button value="4000">Half Yearly Package - Rs.4000/-</mat-radio-button>
+            </mat-radio-group>  
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>INR</mat-label>
+                <input matInput formControlName="inr"   
+                       readonly>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Paisa</mat-label>
+                <input matInput formControlName="paisa" 
+                readonly>
+            </mat-form-field>
+        </div>
+        -->
+          <!-- <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext >Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div> -->
+        <!-- <button mat-button matStepperPrevious>Back</button> -->
+        
+    <!-- </mat-step>
+  </mat-horizontal-stepper> -->
+
+
+
+
+
+
+
+
+

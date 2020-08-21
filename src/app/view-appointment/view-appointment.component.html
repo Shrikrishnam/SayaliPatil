@@ -1,0 +1,33 @@
+
+<label class="title">
+  All Appointments  
+</label>
+
+<div class="mat-elevation-z8" style=" overflow-x:auto; margin:15px">
+    <table  class="table ">
+      <thead>
+        <tr>
+          <th class="h1">Sl NO</th>
+          <th class="h2">Name</th>
+          <th class="h3">Address</th>
+          <th class="h4">City</th>
+          <th class="h5">Package</th>
+          <th class="h6">Trainer Preference</th>
+          <th class="h7">Phone</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngIf="appointmentData?.length>0">          
+        <tr *ngFor="let appt of appointmentData;">
+          <td>{{ appt.id }}</td>
+          <td>{{ appt.firstname }} {{ appt.lastname }}</td>
+          
+          <td>{{ appt.streetaddress }}</td>
+          <td> {{ appt.city }} </td>
+          <td>{{ appt.packages }}</td>
+          <td>{{ appt.trainerpreference }}</td>
+          <td>{{ appt.phonenumber }}</td>
+          <td > <mat-icon (click)="viewDialog(appt)">launch</mat-icon>
+            <mat-icon (click)="deleteAppointment(appt)"  [ngStyle]="{'color':'red'}" > delete</mat-icon> </td>
+          </tbody>
+    </table>

@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    padding: 0%;
+    font-family: Roboto, "Helvetica Neue", sans-serif; }
+.app-root{
+
+    margin: 0px; 
+    padding: 0px;
+}
+.mat-row:hover {
+    background-color: #DCDCDC	;
+  }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+ 
+a:hover, a:active{
+    color: lightgray;
+    text-decoration: none;
+}
+ 
+.navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ 
+mat-toolbar{
+    border-radius: 3px;
+}
+
+.roundImage {
+    overflow: hidden;
+    padding-right: 15px;
+}
+ 
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}
+@media(max-width :550px){
+    .responsive {
+        width: 100%;
+        height: auto;
+        float: none;
+      }  
+}
+
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+ 
+mat-sidenav {
+    width: 250px;
+}
+
+
+.row{
+    margin: 40px;
+}
+h1{
+    text-align: center;
+}
+
+.btn
+{
+
+    background-color: #3f51b5;
+    color: white;
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }
+
+.responsive{
+    float: right;
+}
+
+.text{
+    float: left;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 15px;
+}
+
+p{
+    font-size: 14px;
+   
+}
